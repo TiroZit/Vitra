@@ -1,0 +1,67 @@
+header.header
+  .header__container
+    .header__inner.inner-header 
+      .inner-header__logo.logo-header
+        a.logo-header__link(href="home.html")
+          +image('img/logo.svg', 'Логотип')
+      ul.inner-header__actions.actions-header
+        li.actions-header__item
+          a.actions-header__link(href="#")
+            svg.i-location(style='stroke: currentColor;' aria-hidden)
+              use(xlink:href=`img/icons/icons.svg#svg-location`)
+            span Москва
+        li.actions-header__item
+          a.actions-header__link(href="#") Сервисы
+        li.actions-header__item
+          a.actions-header__link(href="#")
+            svg.i-star(style='stroke: currentColor;' aria-hidden)
+              use(xlink:href=`img/icons/icons.svg#svg-star`)
+        li.actions-header__item
+          a.actions-header__link(href="#")
+            svg.i-compare(style='stroke: currentColor;' aria-hidden)
+              use(xlink:href=`img/icons/icons.svg#svg-compare`)
+        li.actions-header__item
+          .languages-header
+            a.languages-header__lang(href="#") ru
+            button.languages-header__arrow
+              svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
+                use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
+            ul.languages-header__list 
+              li.languages-header__item 
+                a.languages-header__lang(href="#") en
+              li.languages-header__item 
+                a.languages-header__lang(href="#") TR
+    .header__body.body-header
+      nav.body-header__menu.menu-header
+        ul.menu-header__list 
+          li.menu-header__item 
+            a.menu-header__link(href="#")
+              svg.i-santeh(style='stroke: currentColor;' aria-hidden)
+                use(xlink:href=`img/icons/icons.svg#svg-santeh`)
+              span Сантехника
+              svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
+                use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
+          li.menu-header__item 
+            a.menu-header__link(href="#") 
+              svg.i-tile(style='stroke: currentColor;' aria-hidden)
+                use(xlink:href=`img/icons/icons.svg#svg-tile`)
+              span Плитка
+              svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
+                use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
+          li.menu-header__item 
+            a.menu-header__link(href="#") Коллекции
+          li.menu-header__item 
+            a.menu-header__link(href="#") Идеи
+          li.menu-header__item 
+            a.menu-header__link(href="#") О компании
+      ul.inner-header__actions.actions-header
+        li.actions-header__item
+          a.actions-header__link(href="#")
+            svg.i-search(style='stroke: currentColor;' aria-hidden)
+              use(xlink:href=`img/icons/icons.svg#svg-search`)
+            span Поиск
+        li.actions-header__item
+          a.actions-header__link(href="#")
+            svg.i-pin(style='stroke: currentColor;' aria-hidden)
+              use(xlink:href=`img/icons/icons.svg#svg-pin`)
+            span Где купить
