@@ -1,0 +1,307 @@
+@charset "UTF-8";
+@font-face {
+  font-family: SuisseIntlBook;
+  font-display: swap;
+  src: url("../fonts/SuisseIntlBook.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-sand: #B49F8C;
+  --color-light: #E6E6E6;
+  --color-red: #B01E19;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1;
+  font-family: "SuisseIntlBook";
+  font-size: 1rem;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "SuisseIntlBook";
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+address {
+  font-style: unset;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.js-focus-visible :focus-visible {
+  transition: outline 0.1s ease 0s;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  box-sizing: content-box;
+  max-width: 85rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+.header__container {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions-header {
+  display: flex;
+  align-items: flex-start;
+}
+.actions-header__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.actions-header__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 0.0625rem;
+  height: 1.5625rem;
+  background-color: var(--color-light);
+}
+.actions-header__item .i-location {
+  width: 0.75rem;
+  height: 1.5625rem;
+}
+.actions-header__item .i-location, .actions-header__item .i-search, .actions-header__item .i-pin {
+  margin-right: 0.5rem;
+}
+.actions-header__item .i-star, .actions-header__item .i-compare, .actions-header__item .i-search, .actions-header__item .i-pin {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.actions-header__link {
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+}
+@media (any-hover: hover) {
+  .actions-header__link {
+    transition: color 0.3s ease 0s;
+  }
+  .actions-header__link:hover {
+    color: var(--color-sand);
+  }
+}
+
+.languages-header {
+  position: relative;
+  margin-left: 1.25rem;
+  text-transform: uppercase;
+}
+@media (any-hover: hover) {
+  .languages-header:hover .languages-header__list {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.languages-header__list {
+  position: absolute;
+  top: -0.625rem;
+  left: -1.375rem;
+  border-radius: 5px;
+  padding: 0.5625rem 2rem 0.5625rem 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+  background-color: var(--color-light);
+}
+.body-header {
+  margin-top: 5.9375rem;
+}
+.menu-header__list {
+  display: flex;
+  gap: 1.5625rem;
+}
+.menu-header__item .i-santeh, .menu-header__item .i-tile {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+.menu-header__link {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+@media (any-hover: hover) {
+  .menu-header__link {
+    border-bottom: 5px solid transparent;
+    transition: border-bottom 0.3s ease 0s;
+  }
+  .menu-header__link:hover {
+    border-bottom: 5px solid var(--color-red);
+  }
+}
+
+.i-arrow-dropdown {
+  width: 0.75rem;
+  height: 0.625rem;
+  margin-left: 0.3125rem;
+}
+
+/*
+.icon-menu {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+*/
