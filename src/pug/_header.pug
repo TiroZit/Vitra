@@ -5,12 +5,12 @@ header.header
         a.logo-header__link(href="home.html")
           +image('img/logo.svg', 'Логотип')
       ul.inner-header__actions.actions-header
-        li.actions-header__item
+        li.actions-header__item.actions-header__item_location
           a.actions-header__link(href="#")
             svg.i-location(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-location`)
             span Москва
-        li.actions-header__item
+        li.actions-header__item.actions-header__item_services
           a.actions-header__link(href="#") Сервисы
         li.actions-header__item
           a.actions-header__link(href="#")
@@ -20,7 +20,7 @@ header.header
           a.actions-header__link(href="#")
             svg.i-compare(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-compare`)
-        li.actions-header__item
+        li.actions-header__item.actions-header__item_languages(data-da=`.inner-header__actions, ${767/16}, first`)
           .languages-header
             a.languages-header__lang(href="#") ru
             button.languages-header__arrow
@@ -54,13 +54,15 @@ header.header
             a.menu-header__link(href="#") Идеи
           li.menu-header__item 
             a.menu-header__link(href="#") О компании
-      ul.inner-header__actions.actions-header
-        li.actions-header__item
+      ul.body-header__actions.actions-header(data-da=`.inner-header, ${767/16}, first`)
+        li.actions-header__item.actions-header__item_burger
+          button.burger
+        li.actions-header__item.actions-header__item_search
           a.actions-header__link(href="#")
             svg.i-search(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-search`)
             span Поиск
-        li.actions-header__item
+        li.actions-header__item.actions-header__item_pin(data-da=`.body-header__actions, ${767/16}, first`)
           a.actions-header__link(href="#")
             svg.i-pin(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-pin`)

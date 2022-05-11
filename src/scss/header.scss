@@ -8,7 +8,9 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    @include media-breakpoint-up(tablet){
+      align-items: flex-start;
+    }
   }
   // .header__body
   &__body {
@@ -27,11 +29,20 @@
 .logo-header {
   // .logo-header__link
   &__link {
+    @include media-breakpoint-down(tablet){
+      &> img{
+        width: rem(84);
+        height: rem(25);
+      }
+    }
   }
 }
 .actions-header {
   display: flex;
-  align-items: flex-start;
+  @include media-breakpoint-up(tablet){
+    align-items: flex-start;
+  }
+  @include adaptiveValue("gap", 40, 30);
   // .actions-header__item
   &__item {
     position: relative;
@@ -42,7 +53,7 @@
         content:'';
         position: absolute;
         top: 0;
-        right: 0;
+        @include adaptiveValue("right", -20, -15);
         display: block;
         width: rem(1);
         height: rem(25);
@@ -60,13 +71,26 @@
       width: rem(20);
       height: rem(20);
     }
+    @include media-breakpoint-down(tablet){
+      &_location, &_pin, &_services, &_languages{
+        display: none;
+      }
+      &_search{
+        span{
+          display: none;
+        }
+      }
+    }
+    @include media-breakpoint-up(tablet){
+      &_burger{
+        display: none;
+      }
+    }
   }
   // .actions-header__link
   &__link {
     display: flex;
     align-items: center;
-    margin-right: rem(20);
-    margin-left: rem(20);
     @media (any-hover: hover){
       transition: color .3s ease 0s;
       &:hover{
@@ -80,7 +104,6 @@
 
 .languages-header {
   position: relative;
-  margin-left: rem(20);
   text-transform: uppercase;
   @media (any-hover: hover){
     &:hover{
@@ -113,9 +136,11 @@
   }
 }
 .body-header {
-  margin-top: rem(95);
+  @include adaptiveValue("margin-top", 95, 0);
   // .body-header__menu
   &__menu {
+  }
+  &__actions{
   }
 }
 .menu-header {
@@ -123,6 +148,9 @@
   &__list {
     display: flex;
     gap: rem(25);
+    @include media-breakpoint-down(tablet-xl){
+      display: none;
+    }
   }
   // .menu-header__item
   &__item {
@@ -160,14 +188,14 @@
 
 
 //Burger
-/*
-.icon-menu {
+
+.burger {
   display: none;
   @media (max-width: $mobile) {
     display: block;
     position: relative;
-    width: rem(30);
-    height: rem(18);
+    width: rem(23);
+    height: rem(10);
     cursor: pointer;
     z-index: 5;
     span,
@@ -180,6 +208,7 @@
       width: 100%;
       height: rem(2);
       background-color: #000;
+      border-radius: 50%;
     }
     &::before {
       top: 0;
@@ -208,4 +237,4 @@
     }
   }
 }
-*/
+
