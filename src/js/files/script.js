@@ -41,4 +41,13 @@ function documentActions(e) {
     }
     e.preventDefault();
   }
+  if (targetElement.closest(".inner-mobile__link")) {
+    document.documentElement.classList.add('submenu-open')
+    e.preventDefault();
+  }
+  if (targetElement.closest(".submenu-mobile__back")) {
+    document.documentElement.classList.remove('submenu-open')
+    e.preventDefault();
+  }
+
 }

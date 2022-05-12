@@ -146,13 +146,33 @@ header.header
     .menu-mobile
       .menu-mobile__container
         .menu-mobile__inner.inner-mobile 
-          .inner-mobile__items 
-            a.inner-mobile__item(href="#")
-              +image('img/santeh.jpg', 'Сантехника').inner-mobile__img
-              .inner-mobile__title Сантехника
-            a.inner-mobile__item(href="#")
-              +image('img/tile.jpg', 'Плитка').inner-mobile__img
-              .inner-mobile__title Плитка
+          ul.inner-mobile__items 
+            li.inner-mobile__item 
+              button.inner-mobile__link
+                +image('img/santeh.jpg', 'Сантехника').inner-mobile__img
+                .inner-mobile__title Сантехника
+              nav.inner-mobile__submenu.submenu-mobile
+                button.submenu-mobile__back
+                  svg.i-arrow-right(style='stroke: currentColor;' aria-hidden)
+                    use(xlink:href=`img/icons/icons.svg#svg-arrow-right`)
+                  | Назад
+                ul.submenu-mobile__list 
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Унитазы
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Раковины
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Писсуары
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Биде
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Комплектующие
+                  li.submenu-mobile__item 
+                    a.submenu-mobile__link(href="#") Пьедесталы
+            li.inner-mobile__item 
+              button.inner-mobile__link
+                +image('img/tile.jpg', 'Плитка').inner-mobile__img
+                .inner-mobile__title Плитка
         .menu-mobile__body.body-mobile
           nav.body-mobile__menu
             ul.body-mobile__list 

@@ -535,6 +535,9 @@ export function menuInit() {
 			if (bodyLockStatus && e.target.closest('.burger')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
+				if (document.documentElement.classList.contains("submenu-open")) {
+					document.documentElement.classList.remove("submenu-open")
+				}
 			}
 		});
 	};
