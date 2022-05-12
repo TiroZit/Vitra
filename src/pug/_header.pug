@@ -9,7 +9,7 @@ header.header
           a.actions-header__link(href="#")
             svg.i-location(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-location`)
-            span Москва
+            | Москва
         li.actions-header__item.actions-header__item_services
           a.actions-header__link(href="#") Сервисы
         li.actions-header__item
@@ -38,7 +38,7 @@ header.header
             button.menu-header__link(data-parent='1')
               svg.i-santeh(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-santeh`)
-              span Сантехника
+              | Сантехника
               svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
             .menu-header__submenu.submenu(data-submenu='1')
@@ -83,7 +83,7 @@ header.header
             button.menu-header__link(data-parent='2')
               svg.i-tile(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-tile`)
-              span Плитка
+              | Плитка
               svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
             .menu-header__submenu.submenu(data-submenu='2')
@@ -124,7 +124,6 @@ header.header
                   a.submenu__link(href="#") Душевые системы
                 li.submenu__item 
                   a.submenu__link(href="#") Аксессуары
-
           li.menu-header__item 
             a.menu-header__link(href="#") Коллекции
           li.menu-header__item 
@@ -143,4 +142,35 @@ header.header
           a.actions-header__link(href="#")
             svg.i-pin(style='stroke: currentColor;' aria-hidden)
               use(xlink:href=`img/icons/icons.svg#svg-pin`)
-            span Где купить
+            | Где купить
+    .menu-mobile
+      .menu-mobile__container
+        .menu-mobile__inner.inner-mobile 
+          .inner-mobile__items 
+            a.inner-mobile__item(href="#")
+              +image('img/santeh.jpg', 'Сантехника').inner-mobile__img
+              .inner-mobile__title Сантехника
+            a.inner-mobile__item(href="#")
+              +image('img/tile.jpg', 'Плитка').inner-mobile__img
+              .inner-mobile__title Плитка
+        .menu-mobile__body.body-mobile
+          nav.body-mobile__menu
+            ul.body-mobile__list 
+              li.body-mobile__item 
+                a.body-mobile__link(href="#") Коллекции
+                svg.i-arrow-right(style='stroke: currentColor;' aria-hidden)
+                  use(xlink:href=`img/icons/icons.svg#svg-arrow-right`)
+              li.body-mobile__item 
+                a.body-mobile__link(href="#") Идеи и вдохновение
+              li.body-mobile__item 
+                a.body-mobile__link(href="#") О компании
+                svg.i-arrow-right(style='stroke: currentColor;' aria-hidden)
+                  use(xlink:href=`img/icons/icons.svg#svg-arrow-right`)
+              li.body-mobile__item 
+                a.body-mobile__link(href="#") Где купить
+              li.body-mobile__item 
+                a.body-mobile__link(href="#") Сервисы
+        .menu-mobile__footer.footer-mobile
+          .footer-mobile__lang Russia
+          svg.i-arrow-down(style='stroke: currentColor;' aria-hidden)
+            use(xlink:href=`img/icons/icons.svg#svg-arrow-down`)
