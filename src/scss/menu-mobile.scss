@@ -9,6 +9,7 @@
   }
 }
 .menu-mobile, .submenu-mobile{
+  display: none;
   transition: transform .5s ease 0s;
   transform: translateX(-100%);
 }
