@@ -25,6 +25,56 @@
       options.insertStyleElement = insertStyleElement_default();
       injectStylesIntoStyleTag_default()(style_default(), options);
       style_default() && style_default().locals && style_default().locals;
+      let bodyLockStatus = true;
+      let bodyLockToggle = function() {
+        let delay = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 500;
+        if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
+      };
+      let bodyUnlock = function() {
+        let delay = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 500;
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+          let lock_padding = document.querySelectorAll("[data-lp]");
+          setTimeout((() => {
+            for (let index = 0; index < lock_padding.length; index++) {
+              const el = lock_padding[index];
+              el.style.paddingRight = "0px";
+            }
+            body.style.paddingRight = "0px";
+            document.documentElement.classList.remove("lock");
+          }), delay);
+          bodyLockStatus = false;
+          setTimeout((function() {
+            bodyLockStatus = true;
+          }), delay);
+        }
+      };
+      let bodyLock = function() {
+        let delay = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 500;
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+          let lock_padding = document.querySelectorAll("[data-lp]");
+          for (let index = 0; index < lock_padding.length; index++) {
+            const el = lock_padding[index];
+            el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+          }
+          body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+          document.documentElement.classList.add("lock");
+          bodyLockStatus = false;
+          setTimeout((function() {
+            bodyLockStatus = true;
+          }), delay);
+        }
+      };
+      function menuInit() {
+        if (document.querySelector(".burger")) document.addEventListener("click", (function(e) {
+          if (bodyLockStatus && e.target.closest(".burger")) {
+            bodyLockToggle();
+            document.documentElement.classList.toggle("menu-open");
+            if (document.documentElement.classList.contains("submenu-open")) document.documentElement.classList.remove("submenu-open");
+          }
+        }));
+      }
       __webpack_require__(944);
       function DynamicAdapt(type) {
         this.type = type;
@@ -155,8 +205,17 @@
           }
           e.preventDefault();
         }
+        if (targetElement.closest(".inner-mobile__link")) {
+          document.documentElement.classList.add("submenu-open");
+          e.preventDefault();
+        }
+        if (targetElement.closest(".submenu-mobile__back")) {
+          document.documentElement.classList.remove("submenu-open");
+          e.preventDefault();
+        }
       }
       window["FLS"] = false;
+      menuInit();
     }
   };
   var __webpack_module_cache__ = {};
