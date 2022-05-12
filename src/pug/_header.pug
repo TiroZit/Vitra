@@ -35,19 +35,96 @@ header.header
       nav.body-header__menu.menu-header
         ul.menu-header__list 
           li.menu-header__item 
-            a.menu-header__link(href="#")
+            button.menu-header__link(data-parent='1')
               svg.i-santeh(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-santeh`)
               span Сантехника
               svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
+            .menu-header__submenu.submenu(data-submenu='1')
+              ul.submenu__list
+                li.submenu__item 
+                  button.submenu__link(data-sub-parent='1')
+                    svg.i-arrow-right(style='stroke: currentColor;' aria-hidden)
+                      use(xlink:href=`img/icons/icons.svg#svg-arrow-right`)
+                    | Сантехника для ванной
+                  .submenu__sub-submenu.sub-submenu(data-sub-submenu='1')
+                    ul.sub-submenu__list
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Все товары
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Унитазы
+                        a.sub-submenu__content(href="#" style='background-image: url("img/toilet.jpg")')
+                          .sub-submenu__content-title Встраиваемые унитазы
+                          .sub-submenu__content-text Лучшие предложения по гигиене помещения →
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Раковины
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Писсуары
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Биде
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Комплектующие
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Пьедесталы
+                li.submenu__item 
+                  a.submenu__link(href="#") Мебель для ванной
+                li.submenu__item 
+                  a.submenu__link(href="#") Смесители
+                li.submenu__item 
+                  a.submenu__link(href="#") Инсталляции
+                li.submenu__item 
+                  a.submenu__link(href="#") Ванны
+                li.submenu__item 
+                  a.submenu__link(href="#") Душевые системы
+                li.submenu__item 
+                  a.submenu__link(href="#") Аксессуары
           li.menu-header__item 
-            a.menu-header__link(href="#") 
+            button.menu-header__link(data-parent='2')
               svg.i-tile(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-tile`)
               span Плитка
               svg.i-arrow-dropdown(style='stroke: currentColor;' aria-hidden)
                 use(xlink:href=`img/icons/icons.svg#svg-arrow-dropdown`)
+            .menu-header__submenu.submenu(data-submenu='2')
+              ul.submenu__list
+                li.submenu__item 
+                  button.submenu__link(data-sub-parent='2')
+                    svg.i-arrow-right(style='stroke: currentColor;' aria-hidden)
+                      use(xlink:href=`img/icons/icons.svg#svg-arrow-right`)
+                    | Сантехника для ванной
+                  .submenu__sub-submenu.sub-submenu(data-sub-submenu='2')
+                    ul.sub-submenu__list
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Все товары
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Унитазы
+                        a.sub-submenu__content(href="#" style='background-image: url("img/toilet.jpg")')
+                          .sub-submenu__content-title Встраиваемые унитазы
+                          .sub-submenu__content-text Лучшие предложения по гигиене помещения →
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Раковины
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Писсуары
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Биде
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Комплектующие
+                      li.sub-submenu__item
+                        a.sub-submenu__link(href="#") Пьедесталы
+                li.submenu__item 
+                  a.submenu__link(href="#") Мебель для ванной
+                li.submenu__item 
+                  a.submenu__link(href="#") Смесители
+                li.submenu__item 
+                  a.submenu__link(href="#") Инсталляции
+                li.submenu__item 
+                  a.submenu__link(href="#") Ванны
+                li.submenu__item 
+                  a.submenu__link(href="#") Душевые системы
+                li.submenu__item 
+                  a.submenu__link(href="#") Аксессуары
+
           li.menu-header__item 
             a.menu-header__link(href="#") Коллекции
           li.menu-header__item 
